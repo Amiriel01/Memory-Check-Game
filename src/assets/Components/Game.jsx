@@ -68,4 +68,3 @@ export default function Game() {
     )
 }
 
-// export default Game;

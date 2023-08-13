@@ -18,4 +18,3 @@ export default function ({ card, randomCardOrder, updateCurrentCards }) {
     )
 }
 
-// export default Card;

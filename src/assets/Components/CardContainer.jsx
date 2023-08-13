@@ -22,6 +22,10 @@ export default function ({ updateCurrentCards, highScore }) {
         }
     }, [highScore])
 
+    // useEffect(() => {
+    //     randomCardOrder();
+    // })
+
     return (
         <div>
             <div>
@@ -45,5 +49,5 @@ export default function ({ updateCurrentCards, highScore }) {
     )
 }
 
-// export default cardContainer;
+
 
