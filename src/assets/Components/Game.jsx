@@ -58,6 +58,8 @@ export default function Game() {
             {/*updateCurrentCards function to be exported so it can be used in another component. Passed as a key = {property}*/}
             <CardContainer
             updateCurrentCards={updateCurrentCards}
+            highScore={highScore}
+            currentScore={currentScore}
             />
             <p></p>
         </div>

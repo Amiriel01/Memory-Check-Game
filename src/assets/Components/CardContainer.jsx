@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Card from './Card';
+import Game from './Game';
 
 export default function ({ updateCurrentCards, highScore }) {
     //create holding cards for where api cards will go later to test if it works//
@@ -11,20 +12,18 @@ export default function ({ updateCurrentCards, highScore }) {
 
     //useEffect will check criteria each time highScore updates. If the highScore is equal to the cards array length the winner will be called.//
     // console.log(cards.length)
+    // console.log(currentScore)
+    // console.log(highScore)
+    const winner = () => {
+        document.querySelector('.winner-message').innerText = "You Win!";
+    }
     
-    useEffect((highScore) => {
+    useEffect(() => {
         if (highScore === cards.length) {
+            // console.log("winner")
             winner();  
         }
     }, [highScore])
-    
-    const winner = () => {
-        document.querySelector(".winner-message").innerText = "You Win!";
-    }
-
-    // useEffect(() => {
-    //     randomCardOrder();
-    // })
 
     return (
         <div>
@@ -41,7 +40,7 @@ export default function ({ updateCurrentCards, highScore }) {
             </div>
 
             <div className="winner-container">
-                <div className='winner-message'></div>
+                <div className='winner-message'>Winner Goes Here</div>
 
             </div>
         </div>
