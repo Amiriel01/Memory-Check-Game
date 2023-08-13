@@ -2,16 +2,16 @@ import React from 'react';
 // import Game from 'react';
 // import CardContainer from './CardContainer';
 
-export default function ({ card, randomCardOrder, updateCurrentCards }) {
-
+export default function ({ characters, randomCardOrder, updateCurrentCards }) {
+    
     const clickCard = () => {
         randomCardOrder();
-        updateCurrentCards(card);
+        updateCurrentCards(characters);
     }
 
     return (
         <div onClick={clickCard}>
-            {card}
+            {characters}
         </div>
 
 

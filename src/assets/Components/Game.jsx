@@ -11,14 +11,14 @@ export default function Game() {
     const [highScore, setHighScore] = useState(0);
     const [currentCards, setCurrentCards] = useState([]);
 
-    //card must be used as a prop so it can be read and passed across components in order to display the card info//
-    const updateCurrentCards = (card) => {
-        //updateCards function will check to see if the indexOf the card is -1. If it is -1 the card is no longer found in the array. The function will then set the cards after looking over the array using the card prop//
-        if(currentCards.indexOf(card) === -1) {
-            //if the card is picked and is no longer in the array look over the array of cards using the card prop and set them again//
-            setCurrentCards([...currentCards, card])
+    //characters must be used as a prop so it can be read and passed across components in order to display the characters info//
+    const updateCurrentCards = (character) => {
+        //updateCards function will check to see if the indexOf the characters is -1. If it is -1 the characters is no longer found in the array. The function will then set the characters after looking over the array using the characters prop//
+        if(currentCards.indexOf(character) === -1) {
+            //if the characters is picked and is no longer in the array look over the array of characters using the characters prop and set them again//
+            setCurrentCards([...currentCards, character])
         } else { 
-            //When the function does not return a -1 value it will set the currentCards as the default array and reset the score to zero for current score because a card that was already chosen was chosen again//
+            //When the function does not return a -1 value it will set the currentCards as the default array and reset the score to zero for current score because a characters that was already chosen was chosen again//
             setCurrentCards([]);
             setCurrentScore(0);
             
@@ -27,7 +27,7 @@ export default function Game() {
 
     //funtion to incriment score or reset it to 0//
 
-    //useEffect will allows side effects in components. This side effect will count cards for the score update to the DOM//
+    //useEffect will allows side effects in components. This side effect will count characters for the score update to the DOM//
     useEffect(() => {
         //checks to see if the currentCards array length is 0. If it is resets the current score to 0//
         if(currentCards.length === 0) {
