@@ -21,6 +21,7 @@ export default function Game() {
             //When the function does not return a -1 value it will set the currentCards as the default array and reset the score to zero for current score because a card that was already chosen was chosen again//
             setCurrentCards([]);
             setCurrentScore(0);
+            
         }
     }
 
@@ -31,6 +32,7 @@ export default function Game() {
         //checks to see if the currentCards array length is 0. If it is resets the current score to 0//
         if(currentCards.length === 0) {
             setCurrentScore(0);
+            document.querySelector('.winner-message').innerText = "";
         } else {
             //if currentCards.length is not 0 incriment the score + 1//
             setCurrentScore(currentScore + 1);

@@ -11,9 +11,6 @@ export default function ({ updateCurrentCards, highScore }) {
     }
 
     //useEffect will check criteria each time highScore updates. If the highScore is equal to the cards array length the winner will be called.//
-    // console.log(cards.length)
-    // console.log(currentScore)
-    // console.log(highScore)
     const winner = () => {
         document.querySelector('.winner-message').innerText = "You Win!";
     }
@@ -29,6 +26,7 @@ export default function ({ updateCurrentCards, highScore }) {
         <div>
             <div>
                 <p>Card Container Section</p>
+                {/*Map over the card array using each card and the card index.*/}
                 {cards.map((card, index) => {
                     return <div key={index}>
                         <Card
@@ -38,9 +36,9 @@ export default function ({ updateCurrentCards, highScore }) {
                     </div>
                 })}
             </div>
-
+                {/*Posts the winner message to the page*/}
             <div className="winner-container">
-                <div className='winner-message'>Winner Goes Here</div>
+                <div className='winner-message'></div>
 
             </div>
         </div>
