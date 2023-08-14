@@ -49,20 +49,23 @@ export default function ({ updateCurrentCards, highScore }) {
         <div>
             <div>
                 <p>Card Container Section</p>
-                {/*Map over the card array using each card and the card index.*/}
+                {/*Map over the characters array using each character and the character index.*/}
                 {characters.map((character, index) => {
+                    console.log(character.name)
+                    console.log(character.image)
                     {/*  <Character
                         key={index}
                         imageURL={character.image}
                         name={character.name}
                 />,*/}
+                return <div key={index}>
                     <Card
-                        key={index}
+                        // key={index}
                         imageURL={character.image}
                         name={character.name}
                         updateCurrentCards={updateCurrentCards}
                         randomCardOrder={randomCardOrder} />
-                    // </div>
+                    </div>
                 })}
             </div>
             {/*Posts the winner message to the page*/}
