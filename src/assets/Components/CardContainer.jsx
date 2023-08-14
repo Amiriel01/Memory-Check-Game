@@ -12,22 +12,14 @@ export default function ({ updateCurrentCards, highScore }) {
             const baseURL = "https://hp-api.onrender.com/api/characters";
             const response = await axios.get(baseURL);
             const data = response.data.filter(char => char.image);
-            console.log("data", data);
+            
             let fiveRandomCharacters = [];
             for (let i = 0; i < 5; i++) {
-                const index = Math.floor(Math.random() * data.length);
-                const check = data.includes(index);
-                if (check === false) {
-                    fiveRandomCharacters.push(data[index])
-                } else {
-                    while (check === true) {
-                        index = Math.floor(Math.random() * data.length);
-                        // check = data.includes(index);
-                        if(check === false) {
-                            fiveRandomCharacters.push(data[index])
-                        }
-                    }
-                }
+                let filterData = data.filter((character) => !fiveRandomCharacters.includes(character))
+                const index = Math.floor(Math.random() * filterData.length);
+                fiveRandomCharacters.push(filterData[index]);
+                   
+                
             }
             setCharacters(fiveRandomCharacters);
         }
@@ -46,7 +38,7 @@ export default function ({ updateCurrentCards, highScore }) {
 
     useEffect(() => {
         if (highScore === characters.length) {
-            // console.log("winner")
+            
             winner();
         }
     }, [highScore])
@@ -57,17 +49,17 @@ export default function ({ updateCurrentCards, highScore }) {
 
     return (
         <div>
-            <div>
-                <p>Card Container Section</p>
+            <div className="card-container">
+                {/* <p>Card Container Section</p> */}
                 {/*Map over the characters array using each character and the character index.*/}
                 {characters.map((character) => {
-                    console.log(character.id)
+                    
                     return <div key={character.id}>
                         <Card
                             // key={index}
-
-                            imageURL={character.image}
-                            name={character.name}
+                            character={character}
+                            // imageURL={character.image}
+                            // name={character.name}
                             updateCurrentCards={updateCurrentCards}
                             randomCardOrder={randomCardOrder} />
                     </div>

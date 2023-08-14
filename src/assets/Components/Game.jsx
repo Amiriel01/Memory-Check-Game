@@ -1,5 +1,5 @@
 //import useState and useEffect from React so they can be used in this component//
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import CardContainer from "./CardContainer";
 // import Card from "./Card"
 
@@ -12,16 +12,18 @@ export default function Game() {
     const [currentCards, setCurrentCards] = useState([]);
 
     //characters must be used as a prop so it can be read and passed across components in order to display the characters info//
-    const updateCurrentCards = (characters) => {
+    const updateCurrentCards = (character) => {
         //updateCards function will check to see if the indexOf the characters is -1. If it is -1 the characters is no longer found in the array. The function will then set the characters after looking over the array using the characters prop//
-        if(currentCards.indexOf(characters) === -1) {
+        console.log(currentCards)
+        console.log(character)
+        if (currentCards.indexOf(character) === -1) {
             //if the characters is picked and is no longer in the array look over the array of characters using the characters prop and set them again//
-            setCurrentCards([...currentCards, characters])
-        } else { 
+            setCurrentCards([...currentCards, character])
+        } else {
             //When the function does not return a -1 value it will set the currentCards as the default array and reset the score to zero for current score because a characters that was already chosen was chosen again//
             setCurrentCards([]);
             setCurrentScore(0);
-            
+
         }
     }
 
@@ -29,9 +31,9 @@ export default function Game() {
 
     //useEffect will allows side effects in components. This side effect will count characters for the score update to the DOM//
     useEffect(() => {
-        console.log(currentCards.length)
+
         //checks to see if the currentCards array length is 0. If it is resets the current score to 0//
-        if(currentCards.length === 0) {
+        if (currentCards.length === 0) {
             setCurrentScore(0);
             document.querySelector('.winner-message').innerText = "";
         } else {
@@ -46,26 +48,33 @@ export default function Game() {
     //this useEffect function will change the highScore when the currentScore is greater than or equal to the highScore//
     useEffect(() => {
         //checks to see if currentScore is the same or larger than the highScore//
-        if(currentScore >= highScore) {
+        if (currentScore >= highScore) {
             setHighScore(currentScore);
         }
         //this will rendor when currentScore is changed//
     }, [currentScore])
-
-    return (
-        <div>
-            {/*Sets the text and updates {score state}*/}
-            <p>Score Tracker</p>
-            <p>Current Score: {currentScore}</p>
-            <p>High Score: {highScore}</p>
-            {/*updateCurrentCards function to be exported so it can be used in another component. Passed as a key = {property}*/}
-            <CardContainer
-            updateCurrentCards={updateCurrentCards}
-            highScore={highScore}
-            currentScore={currentScore}
-            />
-            <p></p>
-        </div>
-    )
+    //add dif selector
+    if (true) {
+        return (
+            <div>
+                {/*Sets the text and updates {score state}*/}
+                <p>Score Tracker</p>
+                <p>Current Score: {currentScore}</p>
+                <p>High Score: {highScore}</p>
+                {/*updateCurrentCards function to be exported so it can be used in another component. Passed as a key = {property}*/}
+                <CardContainer
+                    updateCurrentCards={updateCurrentCards}
+                    highScore={highScore}
+                    currentScore={currentScore}
+                />
+                <p></p>
+            </div>
+        )
+    } 
+    // else if{
+    //     first page
+    // } else {
+    //     game win page
+    // }
 }
 
