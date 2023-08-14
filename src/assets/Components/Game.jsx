@@ -12,11 +12,11 @@ export default function Game() {
     const [currentCards, setCurrentCards] = useState([]);
 
     //characters must be used as a prop so it can be read and passed across components in order to display the characters info//
-    const updateCurrentCards = (character) => {
+    const updateCurrentCards = (characters) => {
         //updateCards function will check to see if the indexOf the characters is -1. If it is -1 the characters is no longer found in the array. The function will then set the characters after looking over the array using the characters prop//
-        if(currentCards.indexOf(character) === -1) {
+        if(currentCards.indexOf(characters) === -1) {
             //if the characters is picked and is no longer in the array look over the array of characters using the characters prop and set them again//
-            setCurrentCards([...currentCards, character])
+            setCurrentCards([...currentCards, characters])
         } else { 
             //When the function does not return a -1 value it will set the currentCards as the default array and reset the score to zero for current score because a characters that was already chosen was chosen again//
             setCurrentCards([]);
@@ -29,6 +29,7 @@ export default function Game() {
 
     //useEffect will allows side effects in components. This side effect will count characters for the score update to the DOM//
     useEffect(() => {
+        console.log(currentCards.length)
         //checks to see if the currentCards array length is 0. If it is resets the current score to 0//
         if(currentCards.length === 0) {
             setCurrentScore(0);
