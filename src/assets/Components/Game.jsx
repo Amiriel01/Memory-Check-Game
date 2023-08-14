@@ -58,9 +58,13 @@ export default function Game() {
         return (
             <div>
                 {/*Sets the text and updates {score state}*/}
-                <p>Score Tracker</p>
-                <p>Current Score: {currentScore}</p>
-                <p>High Score: {highScore}</p>
+                <div className="score-container">
+                    <h1 id="score-title">Score Tracker</h1>
+                    <div className="current-high-scores">
+                        <h2>Current Score: {currentScore}</h2>
+                        <h2>High Score: {highScore}</h2>
+                    </div>
+                </div>
                 {/*updateCurrentCards function to be exported so it can be used in another component. Passed as a key = {property}*/}
                 <CardContainer
                     updateCurrentCards={updateCurrentCards}
@@ -70,7 +74,7 @@ export default function Game() {
                 <p></p>
             </div>
         )
-    } 
+    }
     // else if{
     //     first page
     // } else {
