@@ -4,8 +4,6 @@ import winner from './images/winner.gif'
 
 export default function Winner({setCardAmount, setDeclareWinner }) {
 
-    
-
     return (
         <div className="start-page-container">
             <h1 id="start-page-title">Hogwarts Memory Check Game</h1>
