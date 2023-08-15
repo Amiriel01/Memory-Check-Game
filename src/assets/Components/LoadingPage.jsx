@@ -3,12 +3,6 @@ import loadpage from './images/loadpage.gif'
 
 export default function LoadingPage() {
 
-    // useEffect(() => {
-    //     setTimeout(() => {
-    //       loadPageDone(true);
-    //     }, 3000);
-    //   }, []);
-
     return (
         <div className="loading-page">
             <div className="start-page-container">
