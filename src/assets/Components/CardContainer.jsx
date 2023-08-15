@@ -3,9 +3,10 @@ import Card from './Card';
 import axios from 'axios';
 
 
-export default function ({ updateCurrentCards, highScore }) {
+export default function ({ updateCurrentCards, highScore,gameMode, setDeclareWinner }) {
 
     const [characters, setCharacters] = useState([]);
+    
     
     useEffect(() => {
         const getCharacters = async function () {
@@ -14,7 +15,7 @@ export default function ({ updateCurrentCards, highScore }) {
             const data = response.data.filter(char => char.image);
             
             let fiveRandomCharacters = [];
-            for (let i = 0; i < 5; i++) {
+            for (let i = 0; i < gameMode; i++) {
                 let filterData = data.filter((character) => !fiveRandomCharacters.includes(character))
                 const index = Math.floor(Math.random() * filterData.length);
                 fiveRandomCharacters.push(filterData[index]);
@@ -32,8 +33,11 @@ export default function ({ updateCurrentCards, highScore }) {
     }
 
     //useEffect will check criteria each time highScore updates. If the highScore is equal to the cards array length the winner will be called.//
+    
+
     const winner = () => {
-        document.querySelector('.winner-message').innerText = "You Win!";
+        // document.querySelector('.winner-message').innerText = "You Win!";
+        setDeclareWinner(true);
     }
 
     useEffect(() => {
