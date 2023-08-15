@@ -7,7 +7,6 @@ export default function ({ randomCardOrder, updateCurrentCards, character }) {
     const clickCard = () => {
         randomCardOrder();
         updateCurrentCards(character);
-        console.log(character)
     }
 
     return (

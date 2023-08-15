@@ -1,31 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Card from './Card';
-import axios from 'axios';
+import Winner from './Winner';
 
 
-export default function ({ updateCurrentCards, highScore,gameMode, setDeclareWinner }) {
 
-    const [characters, setCharacters] = useState([]);
-    
-    
-    useEffect(() => {
-        const getCharacters = async function () {
-            const baseURL = "https://hp-api.onrender.com/api/characters";
-            const response = await axios.get(baseURL);
-            const data = response.data.filter(char => char.image);
-            
-            let fiveRandomCharacters = [];
-            for (let i = 0; i < gameMode; i++) {
-                let filterData = data.filter((character) => !fiveRandomCharacters.includes(character))
-                const index = Math.floor(Math.random() * filterData.length);
-                fiveRandomCharacters.push(filterData[index]);
-                   
-                
-            }
-            setCharacters(fiveRandomCharacters);
-        }
-        getCharacters();
-    }, [])
+export default function ({ updateCurrentCards, highScore,cardAmount, setDeclareWinner, characters, setCardAmount }) {
 
     //this function will sort cards randomly//
     const randomCardOrder = () => {
@@ -37,13 +16,12 @@ export default function ({ updateCurrentCards, highScore,gameMode, setDeclareWin
 
     const winner = () => {
         // document.querySelector('.winner-message').innerText = "You Win!";
-        setDeclareWinner(true);
+        // setDeclareWinner(true);
     }
 
     useEffect(() => {
-        if (highScore === characters.length) {
-            
-            winner();
+        if (highScore === characters.length && characters.length > 0) {
+           setDeclareWinner(true);
         }
     }, [highScore])
 

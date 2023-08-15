@@ -3,6 +3,7 @@ import loadpage from './images/loadpage.gif'
 
 export default function LoadingPage() {
 
+    
     return (
         <div className="loading-page">
             <div className="start-page-container">

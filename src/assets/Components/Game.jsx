@@ -1,9 +1,10 @@
 //import useState and useEffect from React so they can be used in this component//
 import React, { useState, useEffect } from "react";
 import CardContainer from "./CardContainer";
+import Winner from "./Winner";
 // import Card from "./Card"
 
-export default function Game() {
+export default function Game({ declareWinner, setDeclareWinner, characters, setCardAmount }) {
     //set consts for the game//
 
     //useState accepts the initial state (0) and [] and returns the two values, currentState and the function setCurrentState that updates the state//
@@ -14,8 +15,6 @@ export default function Game() {
     //characters must be used as a prop so it can be read and passed across components in order to display the characters info//
     const updateCurrentCards = (character) => {
         //updateCards function will check to see if the indexOf the characters is -1. If it is -1 the characters is no longer found in the array. The function will then set the characters after looking over the array using the characters prop//
-        console.log(currentCards)
-        console.log(character)
         if (currentCards.indexOf(character) === -1) {
             //if the characters is picked and is no longer in the array look over the array of characters using the characters prop and set them again//
             setCurrentCards([...currentCards, character])
@@ -70,6 +69,10 @@ export default function Game() {
                     updateCurrentCards={updateCurrentCards}
                     highScore={highScore}
                     currentScore={currentScore}
+                    setDeclareWinner={setDeclareWinner}
+                    declareWinner={declareWinner}
+                    characters={characters}
+                    setCardAmount={setCardAmount}
                 />
                 <p></p>
             </div>
