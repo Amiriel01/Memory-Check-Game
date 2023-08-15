@@ -1,5 +1,5 @@
 import React from "react";
-import loadpage from './loadpage.gif'
+import loadpage from './images/loadpage.gif'
 
 export default function LoadingPage() {
 

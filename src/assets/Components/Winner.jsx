@@ -1,5 +1,5 @@
 import React from "react";
-import winner from './winner.gif'
+import winner from './images/winner.gif'
 
 export default function Winner() {
 

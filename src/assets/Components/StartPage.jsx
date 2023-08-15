@@ -1,5 +1,5 @@
 import React from "react";
-import goldensnitch from './goldensnitch.png'
+import goldensnitch from './images/goldensnitch.png'
 
 export default function StartPage() {
 
