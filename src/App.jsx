@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Game from './assets/Components/Game';
 import './App.css';
 import axios from 'axios';
@@ -9,16 +9,25 @@ import Winner from './assets/Components/Winner';
 
 
 export default function App() {
-  
+
+  const [loadPageDone, setLoadPageDone] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoadPageDone(true);
+    },9700);
+  }, []);
+
   return (
-   <div>
-    {/* <Winner /> */}
-    {/* <LoadingPage /> */}
-    <Game />
-    {/* <StartPage /> */}
-    
-   </div>
-      
+    <div>
+      {!loadPageDone ? <LoadingPage /> : <StartPage />}
+      {/* <Winner /> */}
+
+      {/* <Game /> */}
+
+
+    </div>
+
   )
 }
 
