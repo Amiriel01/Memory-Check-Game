@@ -12,6 +12,98 @@ body {
     width: 100vw;
 } 
 
+#loading-gif-container {
+   display: flex;
+   justify-content: center;
+}
+
+#loading-gif {
+    padding: 2rem;
+    border:solid 2px;
+    width: 40rem;
+    height: 15rem;
+    border: rgb(252, 205,18) solid 2px;
+}
+
+.start-page-container {
+    width: 60rem;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+    margin-top: 5rem;
+    background-color: rgb(143, 107, 117, .8);
+    padding: 3rem;
+}
+
+#start-page-title {
+    font-size: 4rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.instuctions-container {
+    text-align: center;
+}
+
+#instructions-title {
+    font-size: 2rem;
+    color: rgb(252, 205,18)
+}
+
+#instructions-steps {
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    text-align: left;
+    width: 23rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#game-mode-info {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: rgb(252, 205,18);
+}
+
+.buttons-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 40rem;
+    text-align: center;
+}
+
+#easy,
+#medium,
+#hard,
+#play-again {
+    padding: 1rem;
+    margin-left: 2rem;
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: rgb(142, 133, 136);
+}
+
+#easy:hover,
+#medium:hover,
+#hard:hover,
+#play-again:hover {
+    background-color: rgb(252, 205,18);
+} 
+
+#play-again {
+    margin-top: 2rem;
+}
+
+.golden-snitch-bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
 .card-container {
     display: flex;
     justify-content: space-around;
@@ -22,8 +114,7 @@ body {
 .character-container {
     border: 1px solid black;
     padding: 1rem;
-    background-color: rgb(143, 107, 117, .8);
-    
+    background-color: rgb(143, 107, 117, .8);  
 }
 
 .images {
@@ -58,6 +149,6 @@ body {
     justify-content: center;
     justify-content: space-around;
     margin-top: 1rem;
-    
+
 }
 
