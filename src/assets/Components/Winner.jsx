@@ -1,7 +1,10 @@
 import React from "react";
 import winner from './images/winner.gif'
 
-export default function Winner() {
+
+export default function Winner({setCardAmount, setDeclareWinner }) {
+
+    
 
     return (
         <div className="start-page-container">
@@ -9,9 +12,9 @@ export default function Winner() {
             <h2 id="game-mode-info">You Win!!</h2>
             <div id="loading-gif-container">
                 <img id="loading-gif" src={winner} alt="Golden Snitch Flying" />
-                </div>
-                <div className="buttons-container">
-                    <button id="play-again">Play Again</button>
+            </div>
+            <div className="buttons-container">
+                <button id="play-again" onClick={() => setBackToStart(true)}>Play Again</button>
             </div>
         </div>
     )
