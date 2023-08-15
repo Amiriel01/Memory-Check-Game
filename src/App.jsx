@@ -60,7 +60,9 @@ export default function App() {
                     setDeclareWinner={setDeclareWinner} /> : (
                     <>
                       {!backToStart ?
-                        <Winner /> : <StartPage />}
+                        <Winner 
+                        setBackToStart={setBackToStart}
+                        /> : <StartPage />}
                     </>
                   )}
               </>
