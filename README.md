@@ -2,7 +2,7 @@
 
 **Objective**
 
-I created a memory check game in React using JSX and CSS. I used Netify to deploy the app. I also used Vite and Axios when writing this project.
+I created a memory check game in React using JSX, an API, HTML, and CSS. I used Netify to deploy the app. I also used Vite and Axios when writing this project.
 
 ***Images***
 
