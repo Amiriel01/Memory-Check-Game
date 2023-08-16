@@ -57,18 +57,14 @@ export default function App() {
                 {!declareWinner ?
                   <Game
                     characters={characters}
-                    setDeclareWinner={setDeclareWinner} /> : (
-                    <>
-                      {!backToStart ?
-                        <Winner 
-                        setBackToStart={setBackToStart}
-                        /> : <StartPage />}
-                    </>
-                  )}
+                    setDeclareWinner={setDeclareWinner} /> :
+                  <Winner 
+                  setCardAmount={setCardAmount}
+                  setDeclareWinner={setDeclareWinner}
+                  />}
               </>
             )}
         </>
-
       )}
     </div>
   )
