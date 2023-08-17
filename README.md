@@ -2,13 +2,12 @@
 
 **Objective**
 
-I created a memory check game in React using JSX and CSS. I used Netify to deploy the app. I also used Vite and Axios when writing this project.
+I created a memory check game in React using JSX, an API, HTML, and CSS. I used Netify to deploy the app. I also used Vite and Axios when writing this project.
 
 ***Images***
 
 Loading Page:
-![](loadingpage.png)
-
+![](images/loadingpage.png)
 Instructions Page:
 ![](images/instructionspage.png)
 
@@ -19,7 +18,7 @@ Medium Mode Page:
 ![](images/mediummode.png)
 
 Hard Mode Page:
-![](images/winnerpage.png)
+![](images/hardmode.png)
 
 Winner Page:
 ![](images/winnerpage.png)
@@ -32,7 +31,7 @@ Winner Page:
 
 3. The game page has a score board that shows current score and high score. If a player clicks a card twice their current score will be reset to zero and their high score will log their highest score in that game mode attempt this play through.
 
-4. The winner page will show when the max score per level difficulty has been achieved. The winner page also has a play again button that will port the user back to the instructions page when they can pick a game mode and play again.
+4. The winner page will appear when the max score per level difficulty has been achieved. Users will see a gif and a play again button that will take them back to the instructions page when clicked where they can pick another game mode and play again. 
 
 ***Credits***
 
